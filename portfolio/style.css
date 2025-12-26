@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #0b132b;
+    color: #ffffff;
+    line-height: 1.8;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 70vh;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.35);
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 3.8rem;
+    letter-spacing: 0.25rem;
+}
+
+.hero-text p {
+    opacity: 0.8;
+}
+
+/* SECTION */
+.section {
+    padding: 80px 10%;
+}
+
+.section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    border-left: 4px solid #5bc0be;
+    padding-left: 16px;
+}
+
+/* ABOUT */
+.about-text {
+    max-width: 900px;
+    opacity: 0.9;
+}
+
+/* SKILLS */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.skill-card {
+    background: #1c2541;
+    padding: 24px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    background: #3a506b;
+    transform: translateY(-6px);
+}
+
+/* WORKS */
+.works {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.work-card {
+    background: linear-gradient(135deg, #1c2541, #0b132b);
+    padding: 32px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+    position: relative;
+}
+
+.work-card:hover {
+    transform: translateY(-8px);
+    background: linear-gradient(135deg, #3a506b, #1c2541);
+}
+
+/* CONTACT */
+.contact-text {
+    opacity: 0.9;
+}
+
+/* PAGE TOP */
+#pageTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #3a506b;
+    color: white;
+    border: none;
+    padding: 14px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+#pageTop.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* FOOTER */
+footer {
+    background: #020c1b;
+    padding: 40px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+/* ANIMATION */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* BACK BUTTON */
+.back-button {
+    display: inline-block;
+    margin-top: 60px;
+    padding: 12px 24px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background: #ffffff;
+    color: #0b132b;
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #444;
+    padding: 12px 4px;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 0.08em;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #777;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-bottom: 1px solid #fff;
+}
+
+.submit-button {
+    margin-top: 32px;
+    padding: 14px 0;
+    width: 100%;
+    background: none;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #fff;
+    color: #000;
+}
+.demo-card {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 48px;
+    background: #0b1a2a;
+    border: 1px solid #1f3b5b;
+}
+
+.demo-button {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    margin-bottom: 24px;
+    background: none;
+    border: 1px solid #fff;
+    color: #fff;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+}
+
+.demo-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    margin-bottom: 32px;
+}
+
+.demo-content.active {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.back-button {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 10px 18px;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+}
+
+.back-button:hover {
+    background: #fff;
+    color: #000;
+}
+/* =========================
+   Responsive Design
+========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+    .container,
+    .sub-container {
+        padding: 0 24px;
+    }
+
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
+
+/* Smartphone */
+@media (max-width: 768px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 80px 24px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 24px;
+    }
+
+    .demo-card {
+        padding: 32px 24px;
+    }
+
+    .demo-button {
+        font-size: 14px;
+        padding: 16px 0;
+    }
+
+    .back-button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 24px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 13px;
+    }
+}
+
+/* Small Smartphone */
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header p {
+        font-size: 13px;
+    }
+
+    .submit-button {
+        font-size: 13px;
+        letter-spacing: 0.15em;
+    }
+}
+/* =========================
+   Global Responsive
+========================= */
+
+/* ===== Tablet ===== */
+@media (max-width: 1024px) {
+
+    .container,
+    .sub-container {
+        padding: 0 24px;
+    }
+
+    header {
+        padding: 100px 24px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    /* Works */
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .card {
+        padding: 24px;
+    }
+}
+
+/* ===== Smartphone ===== */
+@media (max-width: 768px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 80px 20px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 80px 0;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+
+    /* Works */
+    .works-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Cards */
+    .card,
+    .demo-card {
+        padding: 24px 20px;
+    }
+
+    /* Buttons */
+    .demo-button,
+    .submit-button {
+        font-size: 14px;
+        padding: 16px 0;
+    }
+
+    .back-button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 32px;
+    }
+
+    /* Contact */
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 13px;
+    }
+}
+
+/* ===== Small Smartphone ===== */
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header p {
+        font-size: 13px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .submit-button {
+        letter-spacing: 0.15em;
+    }
+}
+
+/* =========================
+   Layout Base Fix
+========================= */
+
+.container,
+.sub-container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 32px;
+    box-sizing: border-box;
+}
+
+/* =========================
+   Detail Page Responsive Fix
+========================= */
+
+@media (max-width: 768px) {
+
+    .sub-container {
+        padding: 0 20px;
+    }
+
+    .detail-card,
+    .demo-card {
+        padding: 24px 20px;
+    }
+
+    .detail-card p,
+    .demo-card p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+}
